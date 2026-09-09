@@ -1,54 +1,163 @@
-name: Bug Report
-description: Report a bug or unexpected behavior
+name: Bug report
+description: Report a reproducible Thinxsense defect with clear acceptance criteria and testing requirements.
 title: "[Bug]: "
-labels: ["bug"]
+labels:
+  - bug
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug. Please fill out the information below so we can investigate.
+        Thanks for reporting a Thinxsense issue. Please provide enough detail for another person or Copilot to reproduce the problem without guessing.
+
   - type: textarea
-    id: description
+    id: summary
     attributes:
-      label: Describe the bug
-      description: A clear and concise description of what the bug is.
-      placeholder: Tell us what happened.
+      label: Summary
+      description: Describe the problem in 1-3 sentences.
+      placeholder: What is broken, and where does it happen?
     validations:
       required: true
-  - type: textarea
-    id: reproduction
+
+  - type: dropdown
+    id: severity
     attributes:
-      label: Steps to reproduce
-      description: Provide the steps to reproduce the behavior.
-      placeholder: |
-        1. Go to '...'
-        2. Click on '...'
-        3. Scroll down to '...'
-        4. See error
+      label: Severity
+      description: How strongly does this affect users or the system?
+      options:
+        - P0 - Critical / outage / security / data-loss risk
+        - P1 - High / major feature broken / no reasonable workaround
+        - P2 - Medium / partial impact / workaround exists
+        - P3 - Low / minor issue / cosmetic
     validations:
       required: true
-  - type: textarea
-    id: expected
+
+  - type: dropdown
+    id: area
     attributes:
-      label: Expected behavior
-      description: A clear and concise description of what you expected to happen.
+      label: Affected area
+      options:
+        - Dashboard
+        - Authentication / Authorization
+        - Users / Accounts
+        - Devices / Assets
+        - Agents / Automation
+        - API / Backend
+        - Database
+        - Notifications
+        - Reports / Analytics
+        - Settings
+        - UI / UX
+        - Performance
+        - Security
+        - CI / Deployment
+        - Other
     validations:
       required: true
-  - type: textarea
+
+  - type: input
     id: environment
     attributes:
       label: Environment
-      description: Include relevant details about your environment (OS, runtime version, browser, etc.).
-      placeholder: |
-        - OS: [e.g. macOS 14]
-        - Node version: [e.g. 20.12.0]
-        - Browser: [e.g. Chrome 120]
+      description: Include environment, branch/version, browser/device, OS, or API version when relevant.
+      placeholder: "Example: staging, main@abc123, Chrome 128, macOS"
     validations:
-      required: false
+      required: true
+
   - type: textarea
-    id: additional
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: What must already exist or be true before reproducing the bug?
+      placeholder: |
+        - User is logged in as an Admin
+        - At least one device exists
+        - Feature flag X is enabled
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide deterministic, numbered steps.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Enter ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What happens now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Add screenshots, videos, console errors, logs, request/response details, or related links. Remove secrets and sensitive data.
+      placeholder: Drag files here or paste sanitized logs.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List objective pass/fail conditions. Avoid vague language such as "works correctly."
+      placeholder: |
+        - [ ] The reported reproduction steps no longer trigger the defect
+        - [ ] Existing behavior in the affected flow remains unchanged
+        - [ ] Error states are handled correctly
+        - [ ] Regression coverage is added
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Required testing
+      description: Identify the automated and manual checks expected for this fix.
+      placeholder: |
+        - Regression test:
+        - Unit / component tests:
+        - Integration tests:
+        - E2E tests:
+        - Edge cases:
+        - Manual QA:
+    validations:
+      required: true
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression risks
+      description: What nearby behavior could this fix accidentally break?
+      placeholder: Authentication, device count refresh, pagination, permissions, caching, etc.
+
+  - type: textarea
+    id: notes
     attributes:
       label: Additional context
-      description: Add any other context, screenshots, or logs about the problem here.
-    validations:
-      required: false
+      description: Add anything else useful to engineering, QA, or Copilot.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Reporter checklist
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I removed passwords, tokens, secrets, and sensitive user data from this report.
+          required: true
+        - label: The expected result and acceptance criteria are testable.
+          required: true
