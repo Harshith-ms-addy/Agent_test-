@@ -1,27 +1,162 @@
 name: Test
 
 on:
-  push:
-    branches: [main, master]
   pull_request:
-    branches: [main, master]
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  test:
+  quality:
+    name: Lint, typecheck, test and build
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
+          node-version: 24
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Detect package manager
+        id: package-manager
+        shell: bash
+        run: |
+          if [[ -f pnpm-lock.yaml ]]; then
+            echo "pm=pnpm" >> "$GITHUB_OUTPUT"
+          elif [[ -f yarn.lock ]]; then
+            echo "pm=yarn" >> "$GITHUB_OUTPUT"
+          elif [[ -f package-lock.json ]]; then
+            echo "pm=npm" >> "$GITHUB_OUTPUT"
+          else
+            echo "pm=npm" >> "$GITHUB_OUTPUT"
+            echo "No lockfile found. Falling back to npm install."
+          fi
 
       - name: Install dependencies
-        run: npm ci
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          case "$PM" in
+            pnpm)
+              pnpm install --frozen-lockfile
+              ;;
+            yarn)
+              yarn install --immutable || yarn install --frozen-lockfile
+              ;;
+            npm)
+              if [[ -f package-lock.json ]]; then
+                npm ci
+              else
+                npm install
+              fi
+              ;;
+            *)
+              echo "Unsupported package manager: $PM"
+              exit 1
+              ;;
+          esac
 
-      - name: Run tests
-        run: npm test
+      - name: Lint
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.lint ? 0 : 1)"; then
+            "$PM" run lint
+          else
+            echo "No lint script found; skipping."
+          fi
+
+      - name: Formatting check
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.['format:check'] ? 0 : 1)"; then
+            "$PM" run format:check
+          elif node -e "const p=require('./package.json'); process.exit(p.scripts?.formatCheck ? 0 : 1)"; then
+            "$PM" run formatCheck
+          else
+            echo "No formatting-check script found; skipping."
+          fi
+
+      - name: Type check
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.typecheck ? 0 : 1)"; then
+            "$PM" run typecheck
+          elif node -e "const p=require('./package.json'); process.exit(p.scripts?.['type-check'] ? 0 : 1)"; then
+            "$PM" run type-check
+          else
+            echo "No typecheck script found; skipping."
+          fi
+
+      - name: Unit / default tests
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.['test:unit'] ? 0 : 1)"; then
+            "$PM" run test:unit
+          elif node -e "const p=require('./package.json'); process.exit(p.scripts?.test ? 0 : 1)"; then
+            "$PM" test
+          else
+            echo "No unit/default test script found; skipping."
+          fi
+
+      - name: Integration tests
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.['test:integration'] ? 0 : 1)"; then
+            "$PM" run test:integration
+          else
+            echo "No integration-test script found; skipping."
+          fi
+
+      - name: Build
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.build ? 0 : 1)"; then
+            "$PM" run build
+          else
+            echo "No build script found; skipping."
+          fi
+
+      - name: End-to-end tests
+        shell: bash
+        env:
+          PM: ${{ steps.package-manager.outputs.pm }}
+        run: |
+          if node -e "const p=require('./package.json'); process.exit(p.scripts?.['test:e2e'] ? 0 : 1)"; then
+            "$PM" run test:e2e
+          elif node -e "const p=require('./package.json'); process.exit(p.scripts?.e2e ? 0 : 1)"; then
+            "$PM" run e2e
+          else
+            echo "No E2E script found; skipping."
+          fi
