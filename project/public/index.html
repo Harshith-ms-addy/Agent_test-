@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thinxsense — AI-powered flight intelligence. Understand every flight before it becomes a problem." />
+  <title>Thinxsense — AI-Powered Flight Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" data-sticky>
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="Thinxsense home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 16C4 16 10 12 16 12C22 12 28 16 28 16C28 16 22 20 16 20C10 20 4 16 4 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 12V8M16 20V24M8 16H4M28 16H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-wordmark">Thinxsense</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu" role="menubar">
+          <li role="none"><a href="#product" class="nav-link" role="menuitem">Product</a></li>
+          <li role="none"><a href="#solutions" class="nav-link" role="menuitem">Solutions</a></li>
+          <li role="none"><a href="#how-it-works" class="nav-link" role="menuitem">How It Works</a></li>
+          <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#sign-in" class="btn btn-ghost">Sign In</a>
+        <a href="#get-started" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">AI-Powered Flight Intelligence</span>
+          <h1 id="hero-heading" class="hero-heading">
+            Understand Every Flight.<br />
+            Before It Becomes a Problem.
+          </h1>
+          <p class="hero-body">
+            Thinxsense turns complex flight, aircraft, operational, and sensor data into clear intelligence—helping teams understand what is happening, why it is happening, and what requires attention.
+          </p>
+          <div class="hero-ctas">
+            <a href="#explore" class="btn btn-primary btn-lg">Explore Agent Flight</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+          </div>
+          <p class="hero-trust">
+            Real-time insights • Intelligent monitoring • Actionable explanations
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Flight intelligence visualization" role="img">
+          <div class="visual-stage">
+            <div class="grid-floor" aria-hidden="true"></div>
+            <svg class="flight-path-svg" viewBox="0 0 540 380" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(59,130,246,0.25)" />
+                  <stop offset="100%" stop-color="rgba(59,130,246,0.8)" />
+                </linearGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              <path
+                class="flight-path-line"
+                d="M40 260 C 140 260, 180 160, 280 180 S 460 100, 500 80"
+                stroke="url(#pathGradient)"
+                stroke-width="2"
+                stroke-dasharray="8 6"
+                fill="none"
+              />
+
+              <g class="waypoint" transform="translate(40,260)">
+                <circle r="5" fill="rgba(148,163,184,0.9)" />
+              </g>
+              <g class="waypoint waypoint-current" transform="translate(280,180)">
+                <circle r="7" fill="#3B82F6" filter="url(#glow)" />
+                <circle class="waypoint-pulse" r="12" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.6" />
+              </g>
+              <g class="waypoint" transform="translate(420,120)">
+                <circle r="5" fill="rgba(148,163,184,0.9)" />
+              </g>
+              <g class="waypoint" transform="translate(500,80)">
+                <circle r="5" fill="rgba(148,163,184,0.9)" />
+              </g>
+            </svg>
+
+            <div class="aircraft" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 4L38 24H52L56 28H38L42 52L36 56L30 28H16L12 24H30L26 8L32 4Z" fill="currentColor" />
+              </svg>
+            </div>
+
+            <div class="metric-card metric-card--altitude">
+              <span class="metric-label">Altitude</span>
+              <span class="metric-value">36,000 ft</span>
+              <span class="metric-status metric-status--stable">Stable</span>
+            </div>
+            <div class="metric-card metric-card--speed">
+              <span class="metric-label">Ground Speed</span>
+              <span class="metric-value">482 kts</span>
+            </div>
+            <div class="metric-card metric-card--health">
+              <span class="metric-label">Flight Health</span>
+              <span class="metric-value">98%</span>
+              <span class="metric-status metric-status--normal">Normal</span>
+            </div>
+            <div class="metric-card metric-card--route">
+              <span class="metric-label">Route</span>
+              <span class="metric-value">BLR → DXB</span>
+            </div>
+            <div class="metric-card metric-card--weather">
+              <span class="metric-label">Weather</span>
+              <span class="metric-value">Clear</span>
+              <span class="metric-status metric-status--low">Low Risk</span>
+            </div>
+
+            <div class="explanation-card">
+              <div class="explanation-title">Flight operating normally</div>
+              <p class="explanation-body">
+                Altitude, weather conditions, route deviation, and aircraft telemetry remain within expected thresholds.
+              </p>
+              <ul class="waypoint-list" aria-label="Flight waypoint status">
+                <li class="waypoint-item waypoint-item--completed">
+                  <span class="waypoint-dot" aria-hidden="true"></span>
+                  <span class="waypoint-name">Departure</span>
+                  <span class="waypoint-state">Completed</span>
+                </li>
+                <li class="waypoint-item waypoint-item--current">
+                  <span class="waypoint-dot" aria-hidden="true"></span>
+                  <span class="waypoint-name">Cruise</span>
+                  <span class="waypoint-state">Current</span>
+                </li>
+                <li class="waypoint-item waypoint-item--low">
+                  <span class="waypoint-dot" aria-hidden="true"></span>
+                  <span class="waypoint-name">Weather Zone</span>
+                  <span class="waypoint-state">Low Risk</span>
+                </li>
+                <li class="waypoint-item waypoint-item--scheduled">
+                  <span class="waypoint-dot" aria-hidden="true"></span>
+                  <span class="waypoint-name">Arrival</span>
+                  <span class="waypoint-state">On Schedule</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
