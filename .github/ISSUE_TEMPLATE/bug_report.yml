@@ -2,6 +2,15 @@ name: Bug report_01
 description: Report a Thinxfresh defect
 title: "[Bug] "
 body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Briefly explain the problem and its impact.
+      placeholder: Describe what is happening in Thinxfresh.
+    validations:
+      required: true
+      
   - type: dropdown
     id: area
     attributes:
