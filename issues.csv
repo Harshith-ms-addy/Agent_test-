@@ -1,0 +1,2 @@
+id,title,body,labels,assignees
+TF-001,Trip current temperature does not refresh,"Steps to reproduce:\n1. Open an ongoing trip\n2. Wait for the next sensor update\n\nExpected: The current temperature refreshes.\nActual: Enter observed behavior here.",bug;thinxfresh,
