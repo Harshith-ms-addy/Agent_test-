@@ -23,6 +23,9 @@ jobs:
     name: Lint, typecheck, test and build
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: project
 
     steps:
       - name: Checkout repository
