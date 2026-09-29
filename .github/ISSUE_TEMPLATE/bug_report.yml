@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a Thinxfresh defect
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Login
+        - Trip creation
+        - Ongoing trip
+        - Scheduled trip
+        - Alerts
+        - Reports
+        - Device or downlink
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots, logs, and trip or device ID
+      description: Remove access tokens, passwords, and customer-sensitive data.
+    validations:
+      required: false
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Production, testing, or development"
+    validations:
+      required: true
