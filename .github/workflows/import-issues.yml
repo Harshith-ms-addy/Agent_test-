@@ -1,0 +1,42 @@
+name: Import issues from CSV or Excel
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Repository path to .csv or .xlsx file'
+        required: true
+        default: 'issues/issues.csv'
+      mode:
+        description: 'Preview first; select create after reviewing the log'
+        required: true
+        type: choice
+        options:
+          - preview
+          - create
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: import-issues-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Excel reader
+        run: python -m pip install 'openpyxl==3.1.5'
+      - name: Import issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          INPUT_FILE: ${{ inputs.file }}
+          IMPORT_MODE: ${{ inputs.mode }}
+        run: python scripts/import_issues.py
