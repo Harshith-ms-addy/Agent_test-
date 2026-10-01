@@ -1,4 +1,4 @@
-﻿source_bug_id,title,body,labels,assignees,milestone,github_issue_url,import_status
+﻿id,title,body,labels,assignees,milestone,github_issue_url,import_status
 bugs (2):1,Starting status count is incorrect when multiple trips are started,"**Source:** bugs (2)
 
 **Source Bug ID:** 1
