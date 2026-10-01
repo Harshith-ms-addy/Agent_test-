@@ -1,0 +1,865 @@
+﻿source_bug_id,title,body,labels,assignees,milestone,github_issue_url,import_status
+bugs (2):1,Starting status count is incorrect when multiple trips are started,"**Source:** bugs (2)
+
+**Source Bug ID:** 1
+
+## Project
+ThinxFresh
+
+## Module / Page
+Home
+
+## Description
+Created two trips and clicked the Start button for both trips. Both trips wer...
+
+## Steps to Reproduce
+Create two trips.
+Open the first trip and click Start.
+Open the second trip a...
+
+## Expected Result
+Both started trips should be displayed with the appropriate status, and the S...
+
+## Actual Result
+Both trips are started, but they are not shown as Ongoing. The Home page Star...
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Sometimes
+
+## Evidence
+Screen Recording 2026-09-17 114502.mp4
+
+## Reported By
+shwetha
+
+## Found Date
+46282",,,,,
+bugs (2):2,Remove 'Team members' colunm in UL1 dashboard for UL2 in User,"**Source:** bugs (2)
+
+**Source Bug ID:** 2
+
+## Project
+Suggetion(not a bug)
+
+## Module / Page
+user
+
+## Description
+Because Ul2 can't able to create or add any users so.",,,,,
+bugs (2):3,Incorrect error message displayed when entering a duplicate custom Product Pr...,"**Source:** bugs (2)
+
+**Source Bug ID:** 3
+
+## Module / Page
+Create trip- product profile
+
+## Description
+In the Create Trip → Product Profile section, the default product profile was...
+
+## Steps to Reproduce
+Navigate to Create Trip.
+Go to the Product Profile section.
+Edit the default ...
+
+## Expected Result
+The system should display a proper validation message indicating that the Pro...
+
+## Actual Result
+The system displays the incorrect message:
+
+""Default values cannot be edited....
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Always
+
+## Evidence
+Screen Recording 2026-09-17 143835.mp4
+
+## Reported By
+shwetha
+
+## Found Date
+46282",,,,,
+bugs (2):4,Repeated temperature alerts are triggered even though the temperature remains...,"**Source:** bugs (2)
+
+**Source Bug ID:** 4
+
+## Module / Page
+Alerts notification- trip details page
+
+## Description
+After starting the trip, the temperature breached the configured threshold in...
+
+## Preconditions / Test Data
+Trip name: FIrstevertrip(98 device)
+
+## Steps to Reproduce
+Create and start a trip.
+Configure a temperature threshold.
+Allow the first p...
+
+## Expected Result
+The system should trigger an alert based on the configured alert/breach logic...
+
+## Actual Result
+The first breached packet triggers an alert, and subsequent packets with the ...
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Often
+
+## Evidence
+Screen Recording 2026-09-17 153856.mp4
+
+## Reported By
+shwetha
+
+## Found Date
+46282",,,,,
+bugs (2):5,Humidity Breach Alerts Are Not Being Received,"**Source:** bugs (2)
+
+**Source Bug ID:** 5
+
+## Module / Page
+Alerts
+
+## Description
+When the humidity value breaches the configured threshold, the expected alert...
+
+## Steps to Reproduce
+Configure a humidity threshold/limit.
+Allow the humidity value to exceed the ...
+
+## Expected Result
+When humidity exceeds the configured threshold, an alert should be generated ...
+
+## Actual Result
+The humidity breach occurs, but the expected alert is not received.
+
+## Severity
+high
+
+## Priority
+medium
+
+## Reproducibility
+Sometimes
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQBDoBoJPVZtTqyD34ElYlONAcr3hxpclyMz8f59...
+
+## Reported By
+veena
+
+## Found Date
+46282",,,,,
+bugs (2):6,Ongoing Trip Details page displays previous packet values when Temperature an...,"**Source:** bugs (2)
+
+**Source Bug ID:** 6
+
+## Module / Page
+Ongoing trip details page
+
+## Description
+In a rare scenario, after a trip is started, the Temperature and Humidity val...
+
+## Preconditions / Test Data
+Latest breached values: Temperature -19.06°C, Humidity 7% RH
+Alert: Temp Low ...
+
+## Steps to Reproduce
+Create and start a trip with configured Temperature and Humidity thresholds.
+...
+
+## Expected Result
+The Ongoing Trip Details page should display the latest packet's Temperature ...
+
+## Actual Result
+Alerts and email notifications are generated for the latest breached values, ...
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Rare
+
+## Evidence
+Screenshot 2026-09-17 160458.png
+
+## Reported By
+shwetha
+
+## Found Date
+46282",,,,,
+bugs (2):7,Temperature Breach Alert Not Triggered After Returning to Normal,"**Source:** bugs (2)
+
+**Source Bug ID:** 7
+
+## Description
+When the temperature exceeds the configured threshold, a breach alert is gene...
+
+## Steps to Reproduce
+Configure a temperature breach threshold.
+Increase the temperature beyond the...
+
+## Expected Result
+A new alert should be triggered each time the temperature transitions from No...
+
+## Actual Result
+The first temperature breach generates an alert, but after the temperature re...
+
+## Severity
+Major
+
+## Priority
+P2 - Medium
+
+## Evidence
+https://1drv.ms/v/c/9c7452f003f0c6f4/IQD2GMxph8UlRpNo0NDB6AZYAaStFPlWgqhzCiCO...
+
+## Reported By
+veena
+
+## Found Date
+46282",,,,,
+bugs (2):8,Battery KPI shows “Charging: 0” even when the device is charging,"**Source:** bugs (2)
+
+**Source Bug ID:** 8
+
+## Module / Page
+Home
+
+## Description
+When the device is connected to charging, the device status indicates that it...
+
+## Steps to Reproduce
+Log in to the application.
+Connect a device to the charger.
+Verify that the d...
+
+## Expected Result
+The Battery KPI should correctly count and display the device under “Charging...
+
+## Actual Result
+The device is charging, but the Battery KPI displays “Charging: 0”.
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Always
+
+## Evidence
+Screen Recording 2026-09-17 165147.mp4
+
+## Reported By
+shwetha
+
+## Found Date
+46282",,,,,
+bugs (2):9,Trip status changes from Create to Pending after moving from Trash back to On...,"**Source:** bugs (2)
+
+**Source Bug ID:** 9
+
+## Description
+When a trip is in Create status under the Ongoing tab, moving the trip to Tra...
+
+## Steps to Reproduce
+Create a trip and ensure its status is Create.
+Go to the Ongoing tab.
+Verify ...
+
+## Expected Result
+The trip status should remain Create after moving the trip from Trash back to...
+
+## Actual Result
+The trip status changes to Pending after it is moved back to Ongoing.
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Reproducibility
+Often
+
+## Evidence
+https://1drv.ms/v/c/9c7452f003f0c6f4/IQBH1JFkXHaVRYX8DC0S8kyoAck6IS3EJXvrAbHP...
+
+## Reported By
+veena",,,,,
+bugs (2):10,Completed Trip – PDF Location Map Displays Incomplete Route Compared to Dashb...,"**Source:** bugs (2)
+
+**Source Bug ID:** 10
+
+## Description
+For a completed trip, the location route is displayed correctly on the Dashbo...
+
+## Steps to Reproduce
+Start a trip with location tracking enabled.
+Allow the trip to collect multip...
+
+## Expected Result
+The PDF Location map should display the same complete route/location data poi...
+
+## Actual Result
+There is a mismatch between the Dashboard and PDF:
+
+Dashboard: Displays the c...
+
+## Evidence
+Forces2_1789645130000.pdf
+
+
+
+https://gndsolutionsindia1-my.sharepoint.com/:i:...
+
+## Reported By
+shwetha
+
+## Found Date
+46283",,,,,
+bugs (2):11,Started trip changes to Completed when moved to Trash,"**Source:** bugs (2)
+
+**Source Bug ID:** 11
+
+## Description
+When a trip is in Started status and is moved to Trash, the trip status is im...
+
+## Steps to Reproduce
+Create a trip.
+Start the trip so that its status becomes ongoing
+Move the ong...
+
+## Expected Result
+Moving a Started trip to Trash should not automatically change its status to ...
+
+## Actual Result
+The trip status changes to Completed immediately after moving it to Trash.
+
+## Severity
+Major
+
+## Priority
+P2 - Medium
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQCEke9lfn0gT4jGK3LBOxFoAakSDrw7mchZWwtS...
+
+## Reported By
+veena",,,,,
+bugs (2):12,SMS and Email alerts are not triggered for trips in Trash,"**Source:** bugs (2)
+
+**Source Bug ID:** 12
+
+## Description
+When a trip is moved to the Trash status, the expected SMS and Email alerts a...
+
+## Steps to Reproduce
+Create a trip.
+Move the trip to Trash.
+Perform an action/event that should tr...
+
+## Expected Result
+The configured SMS and Email alerts should be triggered as expected, even whe...
+
+## Actual Result
+No SMS or Email alert is received when the trip is in Trash.
+
+## Severity
+Major
+
+## Priority
+P2 - Medium",,,,,
+bugs (2):13,Battery KPI count not displayed when battery percentage is below 15%,"**Source:** bugs (2)
+
+**Source Bug ID:** 13
+
+## Description
+When the device battery percentage drops below 15%, the corresponding count i...
+
+## Steps to Reproduce
+Connect a device and ensure its battery level is being reported.
+Reduce the d...
+
+## Expected Result
+The Battery KPI should display the correct count for all devices whose batter...
+
+## Actual Result
+The Battery KPI count is not displayed when the battery percentage is less th...
+
+## Severity
+Major
+
+## Priority
+P2 - Medium
+
+## Evidence
+https://1drv.ms/v/c/9c7452f003f0c6f4/IQBhwj3cD1ZvTKvzyLFoJ7ZbAReka9NJtKCia58T...
+
+## Reported By
+veena",,,,,
+bugs (2):14,Pending trip in Trash does not move to Ongoing when device comes back online,"**Source:** bugs (2)
+
+**Source Bug ID:** 14
+
+## Description
+When a trip is in the Trash tab with Pending status and the associated device...
+
+## Steps to Reproduce
+Create a trip   and start a trip.
+once the status is pending.Move the trip to...
+
+## Expected Result
+When the device comes back Online, the system should detect the device's onli...
+
+## Actual Result
+Even after the device comes back online, the trip remains in trash.
+
+## Severity
+Medium
+
+## Priority
+Medium
+
+## Evidence
+need discussion
+
+## Reported By
+veena",,,,,
+known limitations:1,Increased application latency when handling a large number of Ongoing or Completed trips,"**Source:** known limitations
+
+**Source Bug ID:** 1
+
+## Project
+ThinxFresh
+
+## Description
+The application experiences increased latency when there is a large number of trips in the Ongoing or Completed sections. As the number of trips grows, loading these pages becomes noticeably slower, impacting the overall user experience.
+
+## Steps to Reproduce
+Ensure the system contains a large number of Ongoing or Completed trips.
+
+Navigate to the Ongoing or Completed trips page.
+
+Perform actions such as loading the page and filtering the trips.
+
+Observe the application's response time.
+
+## Expected Result
+The application should maintain acceptable response times and load trip data efficiently regardless of the number of trips.
+
+## Actual Result
+The application takes longer than expected to load trip data and respond to user actions, resulting in increased latency.
+
+## Severity
+High
+
+## Priority
+High
+
+## Evidence
+https://gndsolutions.atlassian.net/browse/THNXFRSH-893",,,,,
+known limitations:2,Trip Force Stopped Due to Device Not Found so we got partial report and dashboard even though the device is recovered later the data is still partial.,"**Source:** known limitations
+
+**Source Bug ID:** 2
+
+## Description
+When a trip is force stopped because the device is not found, a partial report is generated. After the device is found again, although it has collected the remaining trip data, the dashboard and PDF report continue to display only the initial partial report instead of the complete trip data.
+
+## Steps to Reproduce
+Start a trip.
+
+Simulate a ""Device Not Found"" scenario.
+
+Force stop the trip.
+
+Verify that a partial report is generated.
+
+Restore the device connection.
+
+Ensure the device continues to collect the remaining trip data.
+
+Check the dashboard and generate the PDF report.
+
+## Expected Result
+Once the device is found and the remaining trip data is synchronized, the dashboard and PDF report should be updated to include the complete trip data.
+
+The final report should reflect all data collected throughout the trip, including data collected after the device reconnects.
+
+## Actual Result
+The dashboard displays only the partial report generated at the time of the force stop.
+
+The PDF report also contains only the partial trip data.
+
+The remaining data collected after the device reconnects is not reflected in either the dashboard or the PDF.
+
+## Severity
+high
+
+## Priority
+high
+
+## Evidence
+https://gndsolutions.atlassian.net/browse/THNXFRSH-913",,,,,
+known limitations:3,Completed trip details page does not display trip data,"**Source:** known limitations
+
+**Source Bug ID:** 3
+
+## Description
+For completed trips, opening the trip details page does not display any trip-related information. The trip is listed as completed, but all data within the trip details view is missing.
+
+## Steps to Reproduce
+Navigate to the Completed Trips section.
+
+Select Trip1 completed trip.
+
+Open the trip details page.
+
+Observe the displayed trip information.
+
+## Expected Result
+trip data should be displayed
+
+## Actual Result
+trip data is not displaying
+
+## Severity
+Major
+
+## Priority
+P2 - Medium
+
+## Evidence
+https://gndsolutions.atlassian.net/browse/THNXFRSH-818",,,,,
+Mobile testing:1,"Tracker Status Overview KPI data is misaligned when clicking Available, Trip,...","**Source:** Mobile testing
+
+**Source Bug ID:** 1
+
+## Project
+Thinxfresh
+
+## Description
+When the user clicks the Tracker Status Overview KPI cards such as Available,...
+
+## Steps to Reproduce
+Login to the application.
+Navigate to the Tracker Status  Overview page.  
+Cl...
+
+## Expected Result
+When a user clicks a Tracker Status KPI card:
+
+
+All data should display only ...
+
+## Actual Result
+The tracker data displayed after clicking Available, Trip, or Created KPI car...
+
+## Browser / Device
+chrome/android & Safari/Iphone/ipad
+
+## Evidence
+Media.jpg",,,,,
+Mobile testing:2,Tooltip is not displayed for truncated long data in Ongoing Trips page,"**Source:** Mobile testing
+
+**Source Bug ID:** 2
+
+## Description
+In the Ongoing Trips page also alert, when a field contains long text, only p...
+
+## Steps to Reproduce
+Login to the application.
+Navigate to the Ongoing Trips page.
+Identify a fiel...
+
+## Expected Result
+Whenever a value is truncated because of limited space:
+
+The UI can continue ...
+
+## Actual Result
+The text is truncated with ..., but hovering over the value does not display ...
+
+## Browser / Device
+chrome/android & Safari/Iphone
+
+## Evidence
+Media.jpg",,,,,
+Mobile testing:3,Playback Speed option is not visible when the map(ongoing & completed) screen...,"**Source:** Mobile testing
+
+**Source Bug ID:** 3
+
+## Description
+In the trip map(ongoing & completed) playback section, the Playback Speed opt...
+
+## Steps to Reproduce
+Login to the application.
+Navigate to the page containing the Trip Map(ongoin...
+
+## Expected Result
+The Playback Speed option should remain visible and accessible in all support...
+
+## Actual Result
+When the screen/map is enlarged, the Playback Speed control is hidden/not vis...
+
+## Browser / Device
+Safari/Iphone
+
+## Evidence
+Image.jpg",,,,,
+Mobile testing:4,Expand/Fullscreen button is missing in the Trackers Map on the Trackers page,"**Source:** Mobile testing
+
+**Source Bug ID:** 4
+
+## Description
+On the Trackers page, the map section does not provide an Expand/Fullscreen b...
+
+## Steps to Reproduce
+Navigate to the Trackers page.
+Open or view the Trackers Map section.
+Check t...
+
+## Expected Result
+An Expand/Fullscreen button should be available on the Trackers Map.
+
+## Actual Result
+The Trackers Map does not have an Expand/Fullscreen button.
+
+## Browser / Device
+Safari/Iphone",,,,,
+Mobile testing:5,Add/Edit User popup header is cut off in Safari browser on iPhone,"**Source:** Mobile testing
+
+**Source Bug ID:** 5
+
+## Description
+In the Users & Access section, when opening the Add User or Edit User popup o...
+
+## Steps to Reproduce
+Open the application on an iPhone.
+Use the Safari browser.
+Login to the appli...
+
+## Expected Result
+The complete popup, including the header, should be fully visible on iPhone S...
+
+## Actual Result
+The Add User/Edit User popup header is cut off on iPhone Safari.
+
+## Browser / Device
+Safari/Iphone",,,,,
+Mobile testing:6,Screen automatically zooms and UI becomes misaligned when focusing on any tex...,"**Source:** Mobile testing
+
+**Source Bug ID:** 6
+
+## Description
+This issue is occurring across the entire application, not only in the Add/Ed...
+
+## Steps to Reproduce
+Open the application on an iPhone using Safari.
+Login to the application.
+Nav...
+
+## Expected Result
+When the user taps any text input field anywhere in the application:
+
+The bro...
+
+## Actual Result
+When the user taps a text field:
+
+Safari automatically zooms into the input f...
+
+## Browser / Device
+Safari/Iphone",,,,,
+Mobile testing:row7,"Manual module- open- click on any user manual, there is no back button to com...","**Source:** Mobile testing
+
+**Source Bug ID:** Not assigned",,,,,
+Mobile testing:7,Upload Excel Popup Heading Is Cut Off in edge browser and in android mobile,"**Source:** Mobile testing
+
+**Source Bug ID:** 7
+
+## Description
+When opening the Upload Excel popup to upload a bulk number of devices to a u...
+
+## Steps to Reproduce
+Navigate to the users tab.
+Select a user.
+Click the option to upload devices ...
+
+## Expected Result
+The popup heading should be completely visible and properly aligned within th...
+
+## Actual Result
+The heading of the Upload Excel popup is cut off and not fully visible.
+
+## Browser / Device
+edge/android
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQBTaJ1xNQaIR5dq0xZNTY5cAfWaEQqtrX21zhxl...",,,,,
+Mobile testing:8,"User Manual Displays ""Not Found"" on Mobile","**Source:** Mobile testing
+
+**Source Bug ID:** 8
+
+## Description
+When accessing the User Manual from the mobile application/mobile browser, th...
+
+## Steps to Reproduce
+Open the application on a mobile device.
+Navigate to the User Manual option.
+...
+
+## Expected Result
+The User Manual should open successfully on mobile without displaying a ""Not ...
+
+## Actual Result
+The User Manual page displays ""Not Found"", and the manual cannot be accessed.
+
+## Browser / Device
+chrome& edge/android
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQDbbx6KnWwRQY58stgOuwl4Aep9PchHPn8sLHeE...",,,,,
+Mobile testing:9,Archive and History Tabs Are Misaligned in Admin Account,"**Source:** Mobile testing
+
+**Source Bug ID:** 9
+
+## Description
+When clicking on UL1 in the Admin account, the Archive and History tabs are n...
+
+## Steps to Reproduce
+Log in to the Admin account.
+Navigate to UL1.
+open ul1.
+Observe the Archive a...
+
+## Expected Result
+The Archive and History tabs should be properly aligned and displayed consist...
+
+## Actual Result
+The History tab is misaligned and does not appear in the same alignment as th...
+
+## Browser / Device
+chrome& edge/android
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQDpDzISyUAHSIOUynD127xYAcsjQAPSRywou6pk...",,,,,
+Mobile testing:10,UI Issue in Select User Section Under Assign Tracker,"**Source:** Mobile testing
+
+**Source Bug ID:** 10
+
+## Description
+In the Assign Tracker tab, the Select User section has a UI issue. The user s...
+
+## Steps to Reproduce
+Navigate to the Assign Tracker tab.
+Locate the Select User section.
+Observe t...
+
+## Expected Result
+The Select User section should be properly aligned and displayed with a consi...
+
+## Actual Result
+The Select User section UI is not displayed properly for users, resulting in ...
+
+## Browser / Device
+safari/ipad
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQBu-sWPIzIjSoSLRYUF9PjJAeqAyeQGlXRyj2Yp...",,,,,
+Mobile testing:11,Graph Symbols and Movement Line Not Displaying in Completed Trip,"**Source:** Mobile testing
+
+**Source Bug ID:** 11
+
+## Description
+In the Completed Trip section, the graph UI is not displaying the Temperature...
+
+## Steps to Reproduce
+Navigate to the Completed Trip section.
+Open any completed trip.
+Navigate to ...
+
+## Expected Result
+The Temp, Hum, and Movement symbols/icons should be displayed properly, and t...
+
+## Actual Result
+The Temp symbol/icon is not displayed.
+The Hum symbol/icon is not displayed.
+...
+
+## Browser / Device
+safari/ipad
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQCcOrOjO2xZTotkJJGd9dxjAULo7X6ZjlWYdbHX...",,,,,
+Mobile testing:12,Pagination Moves with Spacing in User Select Section,"**Source:** Mobile testing
+
+**Source Bug ID:** 12
+
+## Description
+In the Assigned Tracker tab, the pagination in the User Select section is not...
+
+## Steps to Reproduce
+Navigate to the Assigned Tracker tab.
+Go to the User Select section.
+Observe ...
+
+## Expected Result
+The pagination should remain properly aligned in a fixed position within the ...
+
+## Actual Result
+The pagination moves along with the spacing when navigating through the user ...
+
+## Browser / Device
+safari/ipad
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQDEQkVY9T5ZRbE4fr_wkH3-AeVhHAZ7BBisDXp_...",,,,,
+Mobile testing:row14,Login Section Is Completely Right-Aligned on Login Page,"**Source:** Mobile testing
+
+**Source Bug ID:** Not assigned
+
+## Description
+On the Login page, the entire login section is positioned on the right side o...
+
+## Steps to Reproduce
+Open the application.
+Navigate to the Login page.
+Observe the position of the...
+
+## Expected Result
+The login section should be positioned and aligned correctly according to the...
+
+## Actual Result
+The complete login section is right-aligned on the page, resulting in an impr...
+
+## Browser / Device
+safari/ipad
+
+## Evidence
+https://1drv.ms/i/c/9c7452f003f0c6f4/IQDvwJmM06jgQbtfNMTqxLFZARoZSgOUERzvoKBL...",,,,,
